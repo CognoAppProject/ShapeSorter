@@ -1,0 +1,284 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: rgb(99, 17, 214);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+#score {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.shapes, .slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.shape, .slot {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    background-color: rgba(255, 255, 255, 0.5); /* Very light background with 50% opacity */
+    color: white;
+    font-size: 16px;
+}
+
+/* Specific styles for each shape */
+/* Add styles for new shapes as needed */
+
+/* Existing shape styles */
+.circle {
+    border-radius: 50%;
+    background-color: #FF4136; /* Red */
+}
+
+.square {
+    border-radius: 5px;
+    background-color: #0074D9; /* Blue */
+}
+
+
+/* Triangle Shape */
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 45px 78px 45px; /* Adjusted border-width to properly position the triangle */
+    border-color: transparent transparent #FF851B transparent; /* Orange triangle */
+    margin: auto; /* Center the triangle within its parent */
+}
+
+/* Triangle Slot */
+.slot.triangle {
+    background-color: #FFE5CC; /* Very light orange */
+    overflow: hidden; /* Ensures no part of the triangle spills over */
+    display: flex;
+    align-items: center; /* Adjusted to center the triangle vertically */
+    justify-content: center;
+}
+
+
+.rectangle {
+    border-radius: 5px;
+    background-color: #2ECC40; /* Green */
+}
+
+.star {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid #FFDC00; /* Yellow star */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin: auto; /* Center the star within its parent */
+}
+
+.pentagon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #FF4136; /* Red */
+}
+
+.pentagon:before {
+    content: '';
+    position: absolute;
+    top: -24%;
+    left: 19%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 85px solid #FF4136; /* Red */
+    transform: rotate(36deg);
+}
+
+.hexagon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #0074D9; /* Blue */
+}
+
+.hexagon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 85px solid #0074D9; /* Blue */
+    transform: rotate(60deg);
+}
+
+.octagon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #FF851B; /* Orange */
+}
+
+.octagon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 45px solid #FF851B; /* Orange */
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #2ECC40; /* Green */
+}
+
+.heart:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background-color: #2ECC40; /* Green */
+    transform: rotate(-45deg);
+}
+
+.heart:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50px;
+    width: 50px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background-color: #2ECC40; /* Green */
+    transform: rotate(45deg);
+}
+
+
+
+
+/* Diamond Shape */
+.diamond {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #FFDC00; /* Yellow */
+    transform: rotate(45deg);
+    margin: auto; /* Center the diamond within its parent */
+}
+
+.diamond:before {
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #FFDC00; /* Yellow */
+    transform: rotate(45deg);
+}
+
+
+.parallelogram {
+    width: 120px;
+    height: 100px;
+    position: relative;
+    background-color: #FF851B; /* Orange */
+}
+
+.parallelogram:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background-color: #FF851B; /* Orange */
+    transform: skewX(30deg);
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+/* Instruction Modal */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: black;
+    width: 80%;
+    max-width: 300px;
+}
+
+.modal-content button {
+    background-color: #009797;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
