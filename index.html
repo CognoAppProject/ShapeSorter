@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Sorter Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Instruction Modal -->
+<div id="instructionModal" class="modal">
+    <div class="modal-content">
+      <h2>Instructions</h2>
+      <p>Drag and drop the correct shapes into their matching slots. 
+        <br>
+        Complete all levels to finish the game.</p>
+      <button onclick="closeInstructionModal()">Got It</button>
+    </div>
+  </div>
+  
+    <h1>Shape Sorter Game</h1>
+    <div class="game-container">
+        <!-- Shapes dynamically added by JavaScript -->
+        <div class="shapes"></div>
+        <!-- Slots dynamically added by JavaScript -->
+        <div class="slots"></div>
+    </div>
+    <div class="buttons">
+        <button onclick="newGame()">Restart Game</button>
+    </div>
+    <!-- Congratulations Modal -->
+<div id="congratsModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Congratulations!</h2>
+        <p id="finalScore"></p>
+        <p id="finalTime"></p>
+        <button onclick="newGame()">Play Again</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
