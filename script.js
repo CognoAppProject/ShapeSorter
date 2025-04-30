@@ -99,6 +99,12 @@ function showCongrats() {
     document.getElementById('finalScore').innerText = `Score: ${score}`;
     document.getElementById('finalTime').innerText = `Time Taken: ${timeTaken} seconds`;
     document.getElementById('congratsModal').style.display = 'flex';
+
+    // Submit result to Android
+    if (window.Android && Android.submitResult) {
+        Android.submitResult("Shape Sorter", score, timeTaken);
+        console.log("Result submitted to Android:", score, timeTaken);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
